@@ -13,11 +13,11 @@ client.on('warn', console.warn);
 
 client.on('error', console.error);
 
-client.on('ready', () => console.log('Bot Discord Bağlandı!'));
+client.on('ready', () => console.log('Bot Discord BaÃ°landÃ½!'));
 
-client.on('disconnect', () => console.log('Bot İnternetden Kaynaklı Bir Sorun Yüzünden Cıktı.'));
+client.on('disconnect', () => console.log('Bot Ãnternetden KaynaklÃ½ Bir Sorun YÃ¼zÃ¼nden CÃ½ktÃ½.'));
 
-client.on('reconnecting', () => console.log('Bot Discord Tekrara Bağlandı.'));
+client.on('reconnecting', () => console.log('Bot Discord Tekrara BaÃ°landÃ½.'));
 
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
@@ -49,7 +49,7 @@ client.on('message', async msg => { // eslint-disable-line
 				const video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
 				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
 			}
-			return msg.channel.send(`âœ… Oynatma Listesi: **${playlist.title}** Listeye Eklendi`);
+			return msg.channel.send(`Ã¢Å“â€¦ Oynatma Listesi: **${playlist.title}** Listeye Eklendi`);
 		} else {
 			try {
 				var video = await youtube.getVideo(url);
@@ -87,7 +87,7 @@ Lutfen Hangi Sarkiyi Secmek isdededini Sec 1-10 Kadar Bir Sayi Yaz.
 	} else if (command === 'gec') {
 		if (!msg.member.voiceChannel) return msg.channel.send(':x: Sesli Kanalda Degilsin.');
 		if (!serverQueue) return msg.channel.send(':x: Sarki Calmiyor.');
-		serverQueue.connection.dispatcher.end(':white_check_mark:  Basariyla Atladın');
+		serverQueue.connection.dispatcher.end(':white_check_mark:  Basariyla AtladÃ½n');
 		return undefined;
 	} else if (command === 'dur') {
 		if (!msg.member.voiceChannel) return msg.channel.send(':x: Sesli Kanala Giriniz.');
@@ -103,10 +103,10 @@ Lutfen Hangi Sarkiyi Secmek isdededini Sec 1-10 Kadar Bir Sayi Yaz.
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 5);
 		return msg.channel.send(`Yeni Ses Durumu: **${args[1]}**`);
 	} else if (command === 'np') {
-		if (!serverQueue) return msg.channel.send(':x: Muzik Calmıyor');
+		if (!serverQueue) return msg.channel.send(':x: Muzik CalmÃ½yor');
 		return msg.channel.send(`Oynatilan Sarki: **${serverQueue.songs[0].title}**`);
 	} else if (command === 'kuyruk') {
-		if (!serverQueue) return msg.channel.send(':x: Muzik Calmıyor');
+		if (!serverQueue) return msg.channel.send(':x: Muzik CalmÃ½yor');
 		return msg.channel.send(`
 __**Sarki Kuyrugu**__
 
@@ -118,16 +118,16 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
-			return msg.channel.send('Sarkı Durdu');
+			return msg.channel.send('SarkÃ½ Durdu');
 		}
-		return msg.channel.send('Sarkı Durdu.');
+		return msg.channel.send('SarkÃ½ Durdu.');
 	} else if (command === 'resume') {
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
-			return msg.channel.send('Tekrar Başladı!');
+			return msg.channel.send('Tekrar BaÃ¾ladÃ½!');
 		}
-		return msg.channel.send(':x: Müzik Calmıyor');
+		return msg.channel.send(':x: MÃ¼zik CalmÃ½yor');
 	}
 
 	return undefined;
@@ -184,7 +184,7 @@ function play(guild, song) {
 
 	const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
 		.on('end', reason => {
-			if (reason === 'İnternetden Kaynaklı Sorun Cıktı.') console.log('Sarkilar Bitti..');
+			if (reason === 'Ãnternetden KaynaklÃ½ Sorun CÃ½ktÃ½.') console.log('Sarkilar Bitti..');
 			else console.log(reason);
 			serverQueue.songs.shift();
 			play(guild, serverQueue.songs[0]);
@@ -195,4 +195,4 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`:notes: **${song.title}** Adli Sarki Basladi`);
 }
 
-client.login(TOKEN);
+client.login(BOT_TOKEN);
