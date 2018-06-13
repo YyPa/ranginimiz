@@ -207,8 +207,8 @@ function play(guild, song) {
             `Prefix : ${ayarlar.prefix}.`,
             `Teşekkürler: ${client.guilds.size} sunucu.`,
             `Teşekkürler: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} kullanıcı.`,
-            `Rangini kullandığınız için teşekkürler`,
-            `Geliştiriciler: Enes Onur Ata#9427 - [R4]❊Yusuf  ☬ ˢᶜᵃʳʸ#2022 - Ƥƛ | OxyGeN#7035`,
+            `VeVo kullandığınız için teşekkürler`,
+            `v!çal | v!dur | v!kuyruk`,
         ];
         let rstatus = Math.floor(Math.random() * status.length);
 
