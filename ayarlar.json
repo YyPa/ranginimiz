@@ -1,10 +1,10 @@
 ﻿
 {
-  "prefix": "r!",
-  "PREFIX": "r!",
+  "prefix": "v!",
+  "PREFIX": "v!",
   "sahip": "375686478363099138",
   "sahip2": "452135971991846916",
-  "token": "NDUxMTMwNTczNDkxMDExNTg0.DgBazw.ZfIu5rUyMTBOZM4piORnPCDFDd4",
-  "TOKEN": "NDUxMTMwNTczNDkxMDExNTg0.DgBazw.ZfIu5rUyMTBOZM4piORnPCDFDd4",
-  "GOOGLE_API_KEY": "AIzaSyDe021FDaJ9StqfyKO7Uf1CNI7DMIKbKAo"
+  "token": "NDU2NDAzODQ4MzIwMjUzOTY0.DgLcTQ.InUbwuUTnrDfxu3geiZMia3E0pA",
+  "TOKEN": "NDU2NDAzODQ4MzIwMjUzOTY0.DgLcTQ.InUbwuUTnrDfxu3geiZMia3E0pA",
+  "GOOGLE_API_KEY": "AIzaSyBdVl-cTICSwYKrZ95SuvNw7dbMuDt1KG0"
 }
