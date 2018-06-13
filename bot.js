@@ -195,4 +195,4 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`:notes: **${song.title}** Adli Sarki Basladi`);
 }
 
-client.login(BOT_TOKEN);
+client.login(TOKEN);
